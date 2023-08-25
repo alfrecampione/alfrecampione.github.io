@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
-    <title>Galería de fotos</title>
-    <style>
-        .photo {
-            width: 100px;
-            height: 100px;
-            display: inline-block;
-            margin-right: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<div class="photo">
-    <img src="http://eprog2.tvcdigital.cu/images/canal/5dcabd7362ddc005c5d54294---TVAvilenna.jpg" alt="Foto 1">
-</div>
-<div class="photo">
-    <img src="http://eprog2.tvcdigital.cu/images/canal/5dcabd9962ddc005c5d54296---TVCamaguey.jpg" alt="Foto 2">
-</div>
-<div class="photo">
-    <img src="http://eprog2.tvcdigital.cu/images/canal/5c5357124929db17b7429949---logo_canal_caribe.png" alt="Foto 3">
-</div>
-<!-- Agrega más divs con la clase "photo" y las imágenes correspondientes -->
+<script type="module">
+    import {Channel,GetChannelList}  from "./connection.js"
+    GetChannelList("https://eprog.importer.premiumtesh.nat.cu/api-data/channel?allrecords=1").then((channels)=>{
+        for (let channel of channels){
+            console.log(channel)
+        }
+    }).catch((error)=>{
+        console.log(error)
+    });
+</script>
 </body>
 </html>
