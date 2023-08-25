@@ -6,7 +6,7 @@
 </head>
 <body>
 <script type="module">
-    import {Channel,GetChannelList}  from "./connection.js"
+    import {Channel,GetChannelList}  from "./connection"
     GetChannelList("https://eprog.importer.premiumtesh.nat.cu/api-data/channel?allrecords=1").then((channels)=>{
         for (let channel of channels){
             console.log(channel)
